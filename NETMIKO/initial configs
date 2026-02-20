@@ -1,0 +1,40 @@
+ROUTER configuration:
+en
+conf t
+hostname R1
+enable password cisco
+username david password cisco
+username david privilege 15
+line vty 0 4
+login local 
+transport input all
+
+SSH configuration:
+ip domain-name cciepython.com
+crypto key generate rsa modulus 2048
+ip ssh version 2
+
+UBUNTU configuration:
+sudo apt-get update
+sudo apt-get install python3 -y
+sudo apt-get install build-essential libssl-dev libffi-dev -y
+sudo apt-get install python-pip -y
+sudo apt install python3.12-venv
+python3 -m venv my_venv
+source my_venv/bin/activate
+pip install cryptography
+python3 -m venv venv
+
+
+en
+conf t
+enable password cisco
+username david password cisco
+username david privilege 15
+line vty 0 4
+login local 
+transport input all
+ip domain-name cciepython.com
+crypto key generate rsa modulus 2048
+ip ssh version 2
+

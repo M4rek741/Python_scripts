@@ -1,0 +1,9 @@
+vlan 2
+int gigabitEthernet 0/2
+switchport mode access
+switchport access vlan 2
+int gigabitEthernet 0/3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport nonegotiate
+switchport trunk allowed vlan 1,2
